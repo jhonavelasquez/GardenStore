@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+* {
+    
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.header img,
+.header h5 {
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.header h5 {
+    font-size: 30px;
+    padding-top: 35px;
+}
+
+h5 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.menu {
+    background-color: #ffffff;
+    list-style: none;
+    padding: 20px;
+    text-align: right;
+}
+
+.menu li a {
+    color: #12c72a;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-family: 'Secular One', sans-serif;
+}
+
+.menu li a:hover {
+    opacity: 0.7;
+}
+
+#CRUD:hover {
+    opacity: 0.7;
+    
+}
+
+#CRUD{
+    padding: 20px;
+}
+
+
+.menu li {
+    display: inline-block;
+    padding-right: 30px;
+}
+.menu li button>a {
+    color: black;
+}
+.menu li a div {
+    float: left;
+}
+.menu li a  img{
+    padding: 0px 10px 5px 0px;
+    
+    
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn:active {
+    color: black;
+}
+
+form{
+    background-color: #12c72a;
+    color: white;
+    margin-left: 100px;
+    padding: 40px;
+    padding-left: 100px;
+    border: 5px solid white;
+    width: 50%;
+}
+
+#inputNombreProducto{
+    width: 50%;
+}
+
+#tablaProductos{
+    background-color: #12c72a;
+    border: 5px solid white;
+    color: white;
+    margin-left: 30px;
+    padding: 10px;
+    width: 30%;
+}
+
+form, #tablaProductos{
+    float: left;
+}
+
+.error{
+    border: 2px red solid !important;
+    background-color: rosybrown !important;
+}
+
+.ok{
+    border: 2px green solid !important;
+    background-color: rgb(98, 255, 158) !important;
+    color: #12c72a;
+}
+
+@media screen and (max-width: 375px){
+    form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    #tablaProductos{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px){
+    body {
+        background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-attachment: fixed;
+        background-position: center center;
+    }
+    .menu li a {
+        float: left;
+        margin-top: 40px;
+    }
+    .menu {
+        width: 100%;
+        height: 80px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu .btn-group {
+        color: #12c72a;
+        padding: 0px;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        
+    }
+
+    #logo>h5{
+        display: none;
+    }
+
+    .btn-group{
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 820px){
+    form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    #tablaProductos{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 912px){
+    form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    #tablaProductos{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 280px){
+    form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+        font-size: 10px;
+    }
+
+    #tablaProductos{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    #tablaProductos{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    form{
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    #tablaProductos{
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    #inputNombreProducto{
+        width: 100%;
+    }
+}
+

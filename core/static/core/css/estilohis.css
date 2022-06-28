@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(imagen/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center center;
+    
+    
+}
+ 
+.header img,
+.header h1 {
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.header h1 {
+    font-size: 30px;
+    padding-top: 35px;
+}
+
+h1 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.menu {
+    background-color: #ffffff;
+    list-style: none;
+    padding: 20px;
+    text-align: right;
+}
+
+.menu li a {
+    color: #12c72a;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-family: 'Secular One', sans-serif;
+}
+
+.menu li a:hover {
+    opacity: 0.7;
+}
+
+#iniciarsesion:hover {
+    opacity: 0.7;
+}
+
+.menu li {
+    display: inline-block;
+    padding-right: 30px;
+}
+.menu li button>a {
+    color: black;
+}
+.menu li a div {
+    float: left;
+}
+.menu li a  img{
+    padding: 0px 10px 5px 0px;
+    
+    
+}
+form {
+    background-color: #12c72ac9;
+    border-radius: 30px;
+}
+
+form>div {
+    margin: 30px 20px 30px 20px;
+}
+label {
+    font-family: 'Secular One', sans-serif;
+    font-size: 23px;
+    color: #ffffff;
+}
+
+label>a {
+    color: #ffffff;
+}
+
+#contenido{
+    padding: 20px
+    
+   
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: #12c72a88;
+    color: white;
+    width: 200px;
+    margin-left: 15%;
+    border-radius: 15px;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+#historial{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left:   15%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    
+}
+#historial1{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 15%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    
+}
+#historial2{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 15%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    
+}
+#historial3{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 15%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+#historial4{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 55%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: -1102px;
+    
+}
+#historial5{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 55%;;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    
+}
+#historial6{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 55%;;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    
+}
+#historial7{
+    display: flex;
+    justify-content: start;
+    background-color: #12c72a88;
+    width: 590px;
+    margin-left: 55%;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    
+}
+
+#boton{
+    padding-top: -20px;
+}
+@media screen and (max-width: 500px) {
+    body {
+        background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-attachment: fixed;
+        background-size:cover;
+        background-position: center;
+    }
+    .header img{
+        display: flex;
+        background-color: #ffffff;
+    }
+    .header h1 {
+        
+        display: none;
+        
+    }
+    #titulo{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: #12c72a88;
+        color: white;
+        width: 200px;
+        margin-left: 30%;
+        border-radius: 15px;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    
+    #historial{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial1{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial2{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial3{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial4{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial5{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial6{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial7{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 800px) {
+    body {
+        background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-attachment: fixed;
+        background-size:cover;
+        background-position: center;
+    }
+    .header img,
+    .header h1 {
+        float: left;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .header h1 {
+            
+        display: none;
+        
+    }
+
+    .header h1 {
+        font-size: 30px;
+        padding-top: 35px;
+    }
+
+    h1 {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .menu {
+        background-color: #ffffff;
+        list-style: none;
+        padding: 20px;
+        text-align: right;
+    }
+
+    .menu li a {
+        color: #12c72a;
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        font-family: 'Secular One', sans-serif;
+    }
+
+    .menu li a:hover {
+        opacity: 0.7;
+    }
+
+    #iniciarsesion:hover {
+        opacity: 0.7;
+    }
+
+    .menu li {
+        display: inline-block;
+        padding-right: 30px;
+    }
+    .menu li button>a {
+        color: black;
+    }
+    .menu li a div {
+        float: left;
+    }
+    .menu li a  img{
+        padding: 0px 10px 5px 0px;
+        
+        
+    }
+    form {
+        background-color: #12c72ac9;
+        border-radius: 30px;
+    }
+
+    form>div {
+        margin: 30px 20px 30px 20px;
+    }
+    label {
+        font-family: 'Secular One', sans-serif;
+        font-size: 23px;
+        color: #ffffff;
+    }
+
+    label>a {
+        color: #ffffff;
+    }
+    
+    #contenido{
+        padding: 20px
+    }    
+
+    #titulo{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: #12c72a88;
+        color: white;
+        width: 200px;
+        margin-left: 30%;
+        border-radius: 15px;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    
+    #historial{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial1{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial2{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial3{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial4{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial5{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial6{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial7{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+
+}
+
+@media screen and (max-width: 1100px){
+    body {
+        background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-attachment: fixed;
+        background-size:cover;
+        background-position: center;
+    }
+        .header img,
+    .header h1 {
+        float: left;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+        padding-top: 35px;
+    }
+
+    h1 {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .menu {
+        background-color: #ffffff;
+        list-style: none;
+        padding: 20px;
+        text-align: right;
+    }
+
+    .menu li a {
+        color: #12c72a;
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        font-family: 'Secular One', sans-serif;
+    }
+
+    .menu li a:hover {
+        opacity: 0.7;
+    }
+
+    #iniciarsesion:hover {
+        opacity: 0.7;
+    }
+
+    .menu li {
+        display: inline-block;
+        padding-right: 30px;
+    }
+    .menu li button>a {
+        color: black;
+    }
+    .menu li a div {
+        float: left;
+    }
+    .menu li a  img{
+        padding: 0px 10px 5px 0px;
+        
+        
+    }
+    form {
+        background-color: #12c72ac9;
+        border-radius: 30px;
+    }
+
+    form>div {
+        margin: 30px 20px 30px 20px;
+    }
+    label {
+        font-family: 'Secular One', sans-serif;
+        font-size: 23px;
+        color: #ffffff;
+    }
+
+    label>a {
+        color: #ffffff;
+    }
+
+    #contenido{
+        padding: 20px
+    }    
+
+    #titulo{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: #12c72a88;
+        color: white;
+        width: 200px;
+        margin-left: 40%;
+        border-radius: 15px;
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    
+    #historial{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial1{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial2{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial3{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial4{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial5{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    #historial6{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+        
+    }
+    #historial7{
+        display: flex;
+        justify-content: start;
+        background-color: #12c72a88;
+        width: 450px;
+        margin-left: 3.5%;
+        border-radius: 15px;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+}
+ 
+   
+    

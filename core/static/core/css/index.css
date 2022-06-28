@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+.header img,
+.header h1 {
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.header h1 {
+    font-size: 30px;
+    padding-top: 35px;
+}
+
+h1 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.menu {
+    background-color: #ffffff;
+    list-style: none;
+    padding: 20px;
+    text-align: right;
+}
+
+.menu li a {
+    color: #12c72a;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-family: 'Secular One', sans-serif;
+}
+
+.menu li a:hover {
+    opacity: 0.7;
+}
+
+#iniciarsesion:hover {
+    opacity: 0.7;
+}
+
+.menu li {
+    display: inline-block;
+    padding-right: 30px;
+}
+.menu li button>a {
+    color: black;
+}
+.menu li a div {
+    float: left;
+}
+.menu li a  img{
+    padding: 0px 10px 5px 0px;
+    
+    
+}
+form {
+    background-color: #12c72ac9;
+    border-radius: 30px;
+}
+
+form>div {
+    margin: 30px 20px 30px 20px;
+}
+label {
+    font-family: 'Secular One', sans-serif;
+    font-size: 23px;
+    color: #ffffff;
+}
+
+label>a {
+    color: #ffffff;
+}
+
+
+
+.card{
+    float: left;
+    margin: 30px 40px;
+}
+
+.card-title{
+    background-color: rgb(19, 231, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 320px){
+    h1{
+        display: none;
+    }
+
+    .card{
+        margin: 20px;
+    }
+
+
+}
+
+@media screen and (max-width: 1024px){
+    .card{
+        margin: 0px;
+    }
+
+    h1{
+        display: none;
+    }
+
+    #menu{
+        margin-right: 40px;
+    }
+
+}
+
+@media screen and (max-width: 1280px){
+    .card{
+        margin: 50px;
+    }
+
+    #menu{
+        margin-left: 40%;
+    }
+    
+    
+}
+
+@media screen and (max-width: 280px){
+    h1{
+        display: none;
+    }
+
+    .card{
+        margin-left: 0;
+        margin-top: 10px;
+
+    }
+
+    .card-text{
+        padding: 5px;
+
+    }
+
+    .card-title{
+        margin: 0 auto;
+        padding: 2px;
+        
+    }
+
+    #menu{
+        margin-left: 40%;
+
+    }
+
+    .card>img{
+        width: 100px;
+        height: 100px;
+        margin: 70px;
+    }
+
+    h5{
+        font-size: 10px;
+    }
+
+}
