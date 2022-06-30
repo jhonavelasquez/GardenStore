@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 </head>
  
 <body>
-    <div class="contenedor">
+      <div class="contenedor">
         <div class="header">
             <img src="https://images.vexels.com/media/users/3/235104/isolated/preview/c82b0d602a94a42de2cc0fb924ecc989-flor-cortada-de-girasol.png"
                 alt="" width="80">
@@ -19,29 +20,29 @@
         </div>
         <ul class="menu">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html" style="color: #12c72a;"><img src="iconos/home_page_24px.png" alt="">Inicio</a> 
+                <a class="nav-link" href="{% url 'index' %}" style="color: #12c72a;"><img src="{% static 'core/img/home_page_24px.png' %}" alt="">Inicio</a> 
                 
             </li>
-            <li><a href="historial.html"> <img src="iconos/time_machine_24px.png" alt="">Tus compras</a></li>
+            <li><a href="{% url 'historial' %}"> <img src="{% static 'core/img/time_machine_24px.png' %}" alt="">Tus compras</a></li>
             <li>
                 <div class="btn-group">
                     <button id="iniciarsesion" type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img src="iconos/user_24px.png" alt="" width="28px">
+                        aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img src="{% static 'core/img/user_24px.png' %}" alt="" width="28px">
                         Iniciar Sesión
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" type="button"><a href="login.html">Iniciar Sesión</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Iniciar Sesión</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a href="registro.html">Registrar</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'registro' %}">Registrar</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a href="suscripcion.html">Suscripción</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="carro.html"><img src="iconos/shopping_cart_24px2.png" alt="" width="35px">Carrito</a></li>
+            <li><a href="{% url 'carro' %}"><img src="{% static 'core/img/shopping_cart_24px2.png' %}" alt="" width="35px">Carrito</a></li>
         </ul>
-    </div>
+    </div> 
     <div id="contenido">
         
     </div>
