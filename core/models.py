@@ -19,8 +19,8 @@ class Producto(models.Model):
 # class Usuario():
 
 class Usuario(models.Model):
-    rut = models.CharField(primary_key=True, max_length=14)
     nombre = models.CharField(max_length=16, null=False)
     apellido = models.CharField(max_length=16, null=False)
-    email = models.EmailField(null=False, unique=True)
+    email = models.EmailField(primary_key=True, unique=True)
+    ciudad = models.CharField(max_length=30, null=False)
     pwd = models.CharField(null=False, max_length=12)
