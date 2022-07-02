@@ -3,8 +3,8 @@ from .models import Producto
 
 # Create your views here.
 def home(request):
-    productos = Producto.objects.all()
-    return render(request, 'core/home.html', {'productos':productos})
+    contexto = {'producto': Producto.objects.all()}
+    return render(request, 'core/index.html', contexto)
 
 def registrarProducto(request):
     codigo=request.POST['codigo']

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from .views import *
 
 # urlpatterns = [
 #     path('', home, name="home"),
@@ -15,10 +15,10 @@ from . import views
 # ejemplo de url falta terminar 
 
 urlpatterns = [
-    path('', views.home),
-    path('registrarProducto/', views.registrarProducto),
-    path('actualizarProducto/<codigo>', views.actualizarProducto),
-    path('eliminarProducto/<codigo>', views.eliminarProducto)
+    path('', home, name='home'),
+    path('registrarProducto/', registrarProducto),
+    path('actualizarProducto/<codigo>', actualizarProducto),
+    path('eliminarProducto/<codigo>', eliminarProducto)
     
     # path('', Login, name='login'),
     # path('registro', registro, name='registro'),
