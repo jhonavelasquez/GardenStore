@@ -7,6 +7,10 @@ def home(request):
     contexto = {'producto': Producto.objects.all()}
     return render(request, 'core/index.html', contexto)
 
+def homeAdmin(request):
+    contexto = {'producto': Producto.objects.all()}
+    return render(request, 'core/indexADMIN.html', contexto)
+
 def registrarProducto(request):
     codigo=request.POST['codigo']
     nombre=request.POST['nombre']
@@ -34,7 +38,18 @@ def login(request):
             newUser = Usuario.objects.get(email = request.POST['email'], pwd = request.POST['password'])
             request.session['email'] = newUser.email 
             contexto = Producto.objects.all()
-            return redirect('tienda')
+            return redirect('home')
+        except Usuario.DoesNotExist as e:
+            messages.success(request, 'Correo o constraseña no son correctos')
+    return render(request, 'core/login.html')
+
+def loginAdmin(request):
+    if request.method == 'POST':
+        try:
+            newUser = Usuario.objects.get(email = request.POST['email'], pwd = request.POST['password'])
+            request.session['email'] = newUser.email 
+            contexto = Producto.objects.all()
+            return redirect('homeAdmin')
         except Usuario.DoesNotExist as e:
             messages.success(request, 'Correo o constraseña no son correctos')
     return render(request, 'core/login.html')
@@ -47,13 +62,12 @@ def registro(request):
         else:
             #creacion del nuevo usuario, entre [] se coloca el atributo "name" de los input en el html
             newUser = Usuario(
-                rut = request.POST['rut'],
                 nombre = request.POST['nombre'],
                 apellido = request.POST['apellido'],
                 email = request.POST['correo'],
+                ciudad = request.POST['ciudad'],
                 pwd = request.POST['password']
             )
-            # Carrito(username = request.POST['correo'], subtotal = 0).save()
             #se guarda el nuevo usuario en la base de datos
             newUser.save()
             messages.success(request, 'Usuario registrado correctamente')

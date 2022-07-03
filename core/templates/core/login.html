@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Garden Store</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -51,7 +51,8 @@
     </ul>
 </div>
     <div class="contenido">
-      <form id="usuario">
+      <form method="post" id="usuario">
+        {% csrf_token %}
         <div class="mb-3">
           <h1> Usuario</h1>
           <label for="exampleInputEmail1" class="form-label">Dirección de correo electrónico</label>
@@ -67,10 +68,10 @@
           <a href="#" style="color: #ffffff;">¿Olvidaste tu contraseña?</a>
         </div>
         <div class="botonLogin">
-          <button type="submit" class="btn btn-primary" style="font-size: 18px;" id="btnIniciarSesionUSUARIO"><a href="index.html"
+          <button type="submit" class="btn btn-primary" style="font-size: 18px;" id="btnIniciarSesionUSUARIO"><a href="{% url 'home' %}"
               style="text-decoration: none; color: #ffffff;">Iniciar Sesión</a></button>
           <br>
-          <button type="irRegistrar" class="btn btn-primary" style="font-size: 18px;"><a href="registro.html"
+          <button type="irRegistrar" class="btn btn-primary" style="font-size: 18px;"><a href="{% url 'registro' %}"
               style="text-decoration: none; color: #ffffff;">¡Registrate!</a></button>
         </div>
       </form>
@@ -86,7 +87,7 @@
           <input type="password" class="form-control" id="ClaveADMIN" required>
         </div>
         <div class="botonLogin">
-          <button type="submit" class="btn btn-primary" style="font-size: 18px;" id="btnIniciarSesionADMIN"><a href="indexADMIN.html"
+          <button type="submit" class="btn btn-primary" style="font-size: 18px;" id="btnIniciarSesionADMIN"><a href="{% url 'homeAdmin' %}"
               style="text-decoration: none; color: #ffffff;">Iniciar Sesión</a></button>
         </div>
       </form>
@@ -94,7 +95,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="loginValidacion.js"></script>
+  <script src="{% static 'core/js/loginValidacion.js' %}"></script>
 </body>
 
 </html>
