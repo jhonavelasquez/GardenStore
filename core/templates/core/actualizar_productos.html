@@ -38,8 +38,9 @@
             CRUD
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><button class="dropdown-item" type="button"><a href="#">Productos</a></button></li>
-            <li><button class="dropdown-item" type="button"><a href="crud_descuentos.html">Descuentos/Promociones</a></button></li>
+            <li><button class="dropdown-item" type="button"><a href="crud_productos.html">Productos</a></button></li>
+            <li><button class="dropdown-item" type="button"><a
+                  href="crud_descuentos.html">Descuentos/Promociones</a></button></li>
           </ul>
         </div>
         </li>
@@ -48,61 +49,39 @@
   </div>
 
     
-    <form id="formProductos" action="/registrarProducto/"  method="POST">
+    <form id="formProductos" action="/editarProducto/"  method="POST">
       {% csrf_token %}
       <br>
       <div class="form-group">
         <label for="inputNombreProducto">Codigo</label>
-        <input type="number" class="form-control" id="inputCodigo"  name="codigo">
+        <input type="number" class="form-control" id="inputCodigo" value="{{ productos.codigo }}"  name="codigo" readonly required>
       </div>
       <br>
       <div class="form-group">
         <label for="inputNombreProducto">Nombre del producto</label>
-        <input type="text" class="form-control" id="inputNombreProducto"  name="nombre">
+        <input type="text" class="form-control" id="inputNombreProducto" value="{{ productos.nombre }}"  name="nombre">
       </div>
       <br>
       <div class="form-group col-md-4">
         <label for="inputPrecio">Precio</label>
-        <input type="number" class="form-control" id="inputPrecio"  name="precio">
+        <input type="number" class="form-control" id="inputPrecio" value="{{ productos.precio }}" name="precio">
       </div>
       <br>
       <div class="form-group col-md-4">
         <label for="inputStock">Stock</label>
-        <input type="number" class="form-control" id="inputStock"  name="stock">
+        <input type="number" class="form-control" id="inputStock" value="{{ productos.stock }}" name="stock">
       </div>
       <br>
-    <button type="submit" class="btn btn-primary" id="btnAgregar">Agregar</button>
+      <div class="form-group">
+        <label for="inputURLImagen">URL Imagen</label>
+        <input type="text" class="form-control" id="inputURLImagen"  name="imagen" value="{{ productos.imagen }}"  required>
+      </div>
+      <br>
+    <button type="submit" class="btn btn-primary" id="btnActualizar" >Actualizar</button>
     <button type="submit" class="btn btn-primary" id="btnLimpiar">Limpiar</button>
 
   </form>
 
-
-  <table class="table table-stripped" id="tablaProductos">
-    <tbody>
-      <tr>
-        <th>Codigo</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Stock</th>
-        <th>Imagen</th>
-        <th>Acciones</th>
-      </tr>
-
-      {% for i in productos %}
-      <tr>
-          <td>{{ i.codigo }}</td>
-          <td>{{ i.nombre }}</td>
-          <td>{{ i.precio }}</td>
-          <td>{{ i.stock }}</td>
-          <td></td>
-          <td>
-            <a href="#"><button type="submit" class="btn btn-secondary" id="btnActualizar">Actualizar</button></a>
-            <a href="eliminarProducto/{{ i.codigo }}"><button type="submit" class="btn btn-secondary" id="btnEliminar">Eliminar</button></a>
-              
-          </td>
-      </tr>
-      {% endfor %}
-    </tbody>
 
   </table>
 

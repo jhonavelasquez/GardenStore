@@ -11,6 +11,10 @@ def homeAdmin(request):
     contexto = {'producto': Producto.objects.all()}
     return render(request, 'core/indexADMIN.html', contexto)
 
+def crudProducto(request):
+    productos = Producto.objects.all()
+    return render(request, 'core/crud_productos.html', productos)
+
 def registrarProducto(request):
     codigo=request.POST['codigo']
     nombre=request.POST['nombre']
@@ -24,7 +28,23 @@ def registrarProducto(request):
 
 def actualizarProducto(request, codigo):
     productos = Producto.objects.get(codigo=codigo)
-    return render(request, 'core/actualizarProducto.html', {'productos':productos})
+    return render(request, 'core/actualizar_productos.html', {'productos':productos})
+
+def editarProducto(request):
+    codigo=request.POST['codigo']
+    nombre=request.POST['nombre']
+    precio=request.POST['precio']
+    stock=request.POST['stock']
+    imagen=request.POST['imagen']
+    
+    productos = Producto.objects.get(codigo=codigo)
+    productos.nombre = nombre
+    productos.precio = precio
+    productos.stock = stock
+    productos.imagen = imagen
+    productos.save()
+    
+    return redirect('/')
        
 
 def eliminarProducto(request, codigo):

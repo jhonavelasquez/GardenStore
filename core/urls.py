@@ -18,13 +18,17 @@ from .views import *
 urlpatterns = [
     path('', home, name='home'),
     path('homeAdmin', homeAdmin, name='homeAdmin'),
-    path('registrarProducto/', registrarProducto),
-    path('actualizarProducto/<codigo>', actualizarProducto),
-    path('eliminarProducto/<codigo>', eliminarProducto),
+    path('crudProducto', crudProducto, name="crudProducto"),
     path('login', LoginView.as_view(template_name="core/login.html"), name="login"),
     path('loginAdmin', LoginView.as_view(template_name="core/login.html"), name="login"),
     path('registro', registro, name="registro"),
-    
+
+    #funciones del crud
+    path('registrarProducto/', registrarProducto),
+    path('actualizarProducto/<codigo>', actualizarProducto),
+    path('eliminarProducto/<codigo>', eliminarProducto),
+    path('editarProducto/', editarProducto),
+        
     # path('', Login, name='login'),
     # path('registro', registro, name='registro'),
     # path('tienda', tienda, name="tienda"),  
