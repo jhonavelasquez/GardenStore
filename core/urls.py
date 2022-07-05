@@ -13,6 +13,11 @@ urlpatterns = [
     path('historial', historial, name='historial'),
     path('suscripcion', suscripcion, name='suscripcion'),
     path('carro', carro, name='carro'),
+    path('carrito', carrito, name='carrito'),
+    path('agregarproducto/<user_id>/<prod_id>', agregarProducto, name='add'),   
+    path('comprar/<p_total>/<id_carrito>', comprar, name='comprar'),
+    path('multicompra/<prod_id>/<user_id>', multiCompra, name="multicompra"),
+    
 
     #funciones del crud
     path('registrarProducto/', registrarProducto),
@@ -25,3 +30,4 @@ urlpatterns = [
     path('eliminarDescuento/<id>', eliminarDescuento),
     path('editarDescuento/', editarDescuento),
 ]
+

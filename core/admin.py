@@ -6,3 +6,4 @@ from core.models import *
 admin.site.register(Producto)
 admin.site.register(Usuario)
 admin.site.register(Descuento)
+admin.site.register(Carrito)
