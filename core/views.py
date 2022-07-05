@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Producto,Usuario
+from .models import *
 
-# Create your views here.
+
+
 def home(request):
     contexto = {'producto': Producto.objects.all()}
     return render(request, 'core/index.html', contexto)
@@ -12,19 +13,33 @@ def homeAdmin(request):
     return render(request, 'core/indexADMIN.html', contexto)
 
 def crudProducto(request):
-    productos = Producto.objects.all()
-    return render(request, 'core/crud_productos.html', productos)
+    contexto = {'producto': Producto.objects.all()}
+    return render(request, 'core/crud_productos.html', contexto)
+
+
+def crudDescuento(request):
+    contexto = {'descuento': Descuento.objects.all()}
+    return render(request, 'core/crud_descuentos.html', contexto)
+
+def historial(request):
+    return render(request, 'core/historial.html')
+
+def suscripcion(request):
+    return render(request, 'core/suscripcion.html')
+
+def carro(request):
+    return render(request, 'core/carro.html')
 
 def registrarProducto(request):
     codigo=request.POST['codigo']
     nombre=request.POST['nombre']
     precio=request.POST['precio']
     stock=request.POST['stock']
+    imagen=request.POST['imagen']
 
         
-    productos = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, stock=stock)
-    return redirect('/')
-    
+    productos = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, stock=stock, imagen=imagen)
+    return redirect('homeAdmin')
 
 def actualizarProducto(request, codigo):
     productos = Producto.objects.get(codigo=codigo)
@@ -50,7 +65,36 @@ def editarProducto(request):
 def eliminarProducto(request, codigo):
     productos = Producto.objects.get(codigo=codigo)
     productos.delete()
-    return redirect('/')
+    return redirect('homeAdmin')
+
+def registrarDescuento(request):
+    id=request.POST['id']
+    nombre=request.POST['nombre']
+    porcentaje=request.POST['porcentaje']
+
+    descuento = Descuento.objects.create(id=id, nombre=nombre, porcentaje=porcentaje)
+    return redirect('homeAdmin')
+
+def actualizarDescuento(request, id):
+    descuento = Descuento.objects.get(id=id)
+    return render(request, 'core/actualizar_descuento.html', {'descuento':descuento})
+
+def editarDescuento(request):
+    id=request.POST['id']
+    nombre=request.POST['nombre']
+    porcentaje=request.POST['porcentaje']
+    
+    descuento = Descuento.objects.get(id=id)
+    descuento.nombre = nombre
+    descuento.porcentaje = porcentaje
+    descuento.save()
+    
+    return redirect('homeAdmin')
+
+def eliminarDescuento(request, id):
+    descuento = Descuento.objects.get(id=id)
+    descuento.delete()
+    return redirect('homeAdmin')
 
 def login(request):
     if request.method == 'POST':
@@ -81,15 +125,16 @@ def registro(request):
             messages.success(request, 'El usuario ingresado ya existe')
         else:
             #creacion del nuevo usuario, entre [] se coloca el atributo "name" de los input en el html
-            newUser = Usuario(
-                nombre = request.POST['nombre'],
-                apellido = request.POST['apellido'],
-                email = request.POST['correo'],
-                ciudad = request.POST['ciudad'],
-                pwd = request.POST['password']
-            )
-            #se guarda el nuevo usuario en la base de datos
-            newUser.save()
-            messages.success(request, 'Usuario registrado correctamente')
-    return render(request, 'core/registro.html')
 
+            nombre = request.POST['nombre'],
+            apellido = request.POST['apellido'],
+            email = request.POST['correo'],
+            ciudad = request.POST['ciudad'],
+            pwd = request.POST['password']
+        
+            #se guarda el nuevo usuario en la base de datos
+            usuario = Usuario.objects.create(nombre=nombre, apellido=apellido, email=email, ciudad=ciudad, pwd=pwd)
+            usuario.save()
+            messages.success(request, 'Usuario registrado correctamente')
+            return redirect('login')
+    return render(request, 'core/registro.html')

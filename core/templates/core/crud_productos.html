@@ -71,8 +71,13 @@
         <input type="number" class="form-control" id="inputStock"  name="stock">
       </div>
       <br>
+      <div class="form-group col-md-4">
+        <label for="inputImagen">Imagen</label>
+        <input type="text" class="form-control" id="inputImagen"  name="imagen">
+      </div>
+      <br>
     <button type="submit" class="btn btn-primary" id="btnAgregar">Agregar</button>
-    <button type="submit" class="btn btn-primary" id="btnLimpiar">Limpiar</button>
+    <button type="reset" class="btn btn-primary" id="btnLimpiar">Limpiar</button>
 
   </form>
 
@@ -88,15 +93,16 @@
         <th>Acciones</th>
       </tr>
 
-      {% for i in productos %}
+      {% for i in producto %}
       <tr>
           <td>{{ i.codigo }}</td>
           <td>{{ i.nombre }}</td>
-          <td>{{ i.precio }}</td>
+          <td>$ {{ i.precio }}</td>
           <td>{{ i.stock }}</td>
+          <td><img src="{{ i.imagen }}" alt="" width="100"></td>
           <td></td>
           <td>
-            <a href="#"><button type="submit" class="btn btn-secondary" id="btnActualizar">Actualizar</button></a>
+            <a href="actualizarProducto/{{ i.codigo }}"><button type="submit" class="btn btn-secondary" id="btnActualizar">Actualizar</button></a>
             <a href="eliminarProducto/{{ i.codigo }}"><button type="submit" class="btn btn-secondary" id="btnEliminar">Eliminar</button></a>
               
           </td>
