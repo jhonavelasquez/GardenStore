@@ -46,67 +46,64 @@
     <div id="contenido">
         
     </div>
-    <div id="tabla">
-        <table class="table caption-top">
-            <caption style="color: white;">Lista de Compras </caption>
-            <thead style="color: white;">
-              <tr>
-                <th scope="col" style="color: white;">#</th>
-                <th scope="col" style="color: white;">Producto</th>
-                <th scope="col" style="color: white;">Precio</th>
-                <th scope="col" style="color: white;">Foto</th>
-              </tr>
-            </thead>
-            <tbody style="color: white;">
-              <tr>
-                <th scope="row" style="color: white;">1</th>
-                <td style="color: white;">Planta de Interior</td>
-                <td style="color: white;">$19.990</td>
-                <td><img src="imagen/planta.jpg" class="img-thumbnail" alt="..." width=220px></td>
-              </tr>
-              <tr>
-                <th scope="row3" style="color: white;">2</th>
-                <td style="color: white;">Plantas para terrasa </td>
-                <td style="color: white;">$8.990</td>
-                <td><img src="imagen/planta1.png" class="img-thumbnail" alt="..." width=220px></td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-    <div id="pagar">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="card-body">
-          <h5 class="card-title">Total a pagar</h5>
-          <table class="table caption-top">
-            <thead style="color: green;">
-              <tr>
-                <th scope="col" style="color: green;">#</th>
-                <th scope="col" style="color: green;">Producto</th>
-                <th scope="col" style="color: green;">Precio</th>
-              </tr>
-            </thead>
-            <tbody style="color: green;">
-              <tr>
-                <th scope="row" style="color: green;">1</th>
-                <td style="color: green;">Planta de Interior</td>
-                <td style="color: green;">$19.990</td>
-              </tr>
-              <tr>
-                <th scope="row3" style="color: green;">2</th>
-                <td style="color: green;">Plantas para terrasa </td>
-                <td style="color: green;">$8.990</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <div id="boton">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button">Pagar</button>
-                <button class="btn btn-primary" type="button">Eliminar</button>
+    <div id="contenido">
+      <div>
+          <h1>Compras</h1>
+      </div>
+      <div class="carro">
+          <div class="table">
+              <table class="table">
+                  <thead>
+                      <tr id="columnas">
+                          <th scope="col">Producto</th>
+                          <th scope="col" style="display: flex; justify-content: center;">Cantidad</th>
+                          <th scope="col">Total</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for i in cartitems %}
+                      <tr>
+                          <th id="producto">
+                              <div>
+                                  <img src="{{i.imagen}}" alt="">
+                              </div>
+                              <div>
+                                  <div class="tituloProducto">
+                                      <h2>{{i.nombre}}</h2>
+                                  </div>
+                              </div>
+  
+                          </th>
+                          <td id="cantidad">
+                              <div class="selector">
+                                  <p>{{i.cantidad}}</p>
+                              </div>
+                          </td>
+                          <td>
+                              <div>
+                                  <p id="valor">${{i.subtotal_producto}} CLP</p>
+                              </div>
+                          </td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+          </div>
+          {% for c in cart %}
+          <div class="precio">
+  
+              <div class="monto">
+                  <h3>Total</h3>
+                  <div id="total">
+                      <p>${{c.subtotal}} CLP</p>
+                  </div>
+              </div>
+              <div class="comprar">
+                  <label for="delibery">Impuestos incluidos. ¡Solo por hoy envío gratis!</label>
+                  <a href="{% url 'comprar' p_total=c.subtotal id_carrito=c.id_carrito %}" class="btn btn-danger">Comprar</a>
               </div>
           </div>
-        </div>        
+          {% endfor %}
       </div>
   </div>
 </body>

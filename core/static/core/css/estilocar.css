@@ -28,7 +28,8 @@ h1 {
     padding-top: 20px;
     display: flex;
     justify-content: center;
-    color: #ffffff;
+    color: black;
+
 }
 
 .menu {
@@ -80,7 +81,8 @@ form>div {
 label {
     font-family: 'Secular One', sans-serif;
     font-size: 23px;
-    color: #ffffff;
+    color: black;
+
 }
 
 label>a {
@@ -119,36 +121,151 @@ label>a {
     margin-right: 10px;
     margin-top:  -600px;  
 }
+#contenido {
+    width: 80%;
+    padding: 20px;
+    margin: 20px 0 20px 9%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-style: outset;
+    box-shadow: 5px 5px 50px 5px rgb(44, 44, 44);
+}
+
+/* ---- comienza el carrito */
+
+.carro {
+    display: flex;
+}
+
+.carro > div{
+    margin: 20px;
+}
+
+.table{
+    width: 100%;
+}
+
+.precio{
+    width: 40%;
+}
+
+#producto{
+    display: flex;
+}
+
+#producto img {
+    width: 100px;
+    margin-right: 40px;
+}
+
+h2{
+    font-size: x-large;
+}
+
+p{
+    color: red;
+}
+
+
+#cantidad div{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.selector{
+    display: flex;
+}
+
+.selector input{
+    width: 15%;
+}
+
+.selector button{
+    width: 15%;
+    margin: 5px;
+    border: none;
+}
+input{
+    width: 10%;
+}
+
+#valor{
+    margin-top: 20px;
+    color: black;
+}
+
+
+/* Creacion de la seccion total */
+
+.monto{
+    display: flex;
+    justify-content: space-around;
+}
+
+h3{
+    font-size: 30px;
+}
+#total{
+    color: black;
+    font-size: 25px;
+}
+
+
+.comprar{
+    margin: 40px;
+}
+
+.comprar button{
+    width: 100%;
+    height: 50px;
+}
+
+@media screen and (max-width: 400px){
+.carro{
+    padding: auto;
+}
+}
+
+
 
 @media screen and (max-width: 800px) {
-    body {
+    body{
         background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-repeat: no-repeat;
+        background-size: 100%;
         background-attachment: fixed;
+        background-size:cover;
+        background-position: center center;
     }
-    .header img{
-        display: flex;
-        background-color: #ffffff;
-    }
+     
+    .header img,
     .header h1 {
-        
-        display: none;
-        
+        float: left;
+        padding-left: 20px;
+        padding-top: 20px;
     }
-
+    
+    .header h1 {
+        font-size: 30px;
+        padding-top: 35px;
+    }
+    
     h1 {
         padding-top: 20px;
         display: flex;
         justify-content: center;
-        color: #ffffff;
+        color: black;
+    
     }
-
+    
     .menu {
         background-color: #ffffff;
         list-style: none;
         padding: 20px;
         text-align: right;
     }
-
+    
     .menu li a {
         color: #12c72a;
         text-decoration: none;
@@ -156,15 +273,15 @@ label>a {
         display: block;
         font-family: 'Secular One', sans-serif;
     }
-
+    
     .menu li a:hover {
         opacity: 0.7;
     }
-
+    
     #iniciarsesion:hover {
         opacity: 0.7;
     }
-
+    
     .menu li {
         display: inline-block;
         padding-right: 30px;
@@ -184,50 +301,320 @@ label>a {
         background-color: #12c72ac9;
         border-radius: 30px;
     }
-
+    
     form>div {
         margin: 30px 20px 30px 20px;
     }
     label {
         font-family: 'Secular One', sans-serif;
-        font-size: 23px;
-        color: #ffffff;
+        font-size: 13px;
+        color: black;
+    
     }
-
+    
     label>a {
         color: #ffffff;
     }
+    
     
     #contenido{
         padding: 20px
         
        
     }
-    #tabla{
+    
+    #contenido {
+        width: 90%;
+        padding: 20px;
+        margin: 2px 0 2px 3%;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-style: outset;
+        box-shadow: 5px 5px 50px 5px rgb(44, 44, 44);
+    }
+    
+    /* ---- comienza el carrito */
+    
+    .carro {
+        display: flex;
+    }
+    
+    .carro > div{
+        margin: 2px;
+    }
+    
+    .table{
+        width: 10%;
+    }
+    
+    .precio{
+        width: 10%;
+    }
+    
+    #producto{
+        display: flex;
+    }
+    
+    #producto img {
+        width: 10px;
+        margin-right: 4px;
+    }
+    
+    h2{
+        font-size: x-large;
+    }
+    
+    p{
+        color: red;
+    }
+    
+    
+    #cantidad div{
+        margin-top: 2px;
         display: flex;
         justify-content: center;
-        height: 600px;
-        width: 450px;
-        background-color: #12c72a88;
-        margin-left: 20px;
-        border-radius: 15px;
+    }
+    
+    .selector{
+        display: flex;
+    }
+    
+    .selector input{
+        width: 5%;
+    }
+    
+    .selector button{
+        width: 5%;
+        margin: 1px;
+        border: none;
+    }
+    input{
+        width: 5%;
+    }
+    
+    #valor{
+        margin-top: 2px;
+        color: black;
+    }
+    
+    
+    /* Creacion de la seccion total */
+    
+    .monto{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    h3{
+        font-size: 3px;
+    }
+    #total{
+        color: black;
+        font-size: 15px;
+    }
+    
+    
+    .comprar{
+        margin: 4px;
+    }
+    
+    .comprar button{
+        width: 10%;
+        height: 5px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body{
+        background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-size:cover;
+        background-position: center center;
+    }
+     
+    .header img,
+    .header h1 {
+        float: left;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    
+    .header h1 {
+        font-size: 30px;
+        padding-top: 35px;
+    }
+    
+    h1 {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: black;
+    
+    }
+    
+    .menu {
+        background-color: #ffffff;
+        list-style: none;
+        padding: 20px;
+        text-align: right;
+    }
+    
+    .menu li a {
+        color: #12c72a;
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        font-family: 'Secular One', sans-serif;
+    }
+    
+    .menu li a:hover {
+        opacity: 0.7;
+    }
+    
+    #iniciarsesion:hover {
+        opacity: 0.7;
+    }
+    
+    .menu li {
+        display: inline-block;
+        padding-right: 30px;
+    }
+    .menu li button>a {
+        color: black;
+    }
+    .menu li a div {
+        float: left;
+    }
+    .menu li a  img{
+        padding: 0px 10px 5px 0px;
+        
         
     }
-    .table caption-top{
-        color: white;
+    form {
+        background-color: #12c72ac9;
+        border-radius: 30px;
     }
-
-    #pagar{
+    
+    form>div {
+        margin: 30px 20px 30px 20px;
+    }
+    label {
+        font-family: 'Secular One', sans-serif;
+        font-size: 13px;
+        color: black;
+    
+    }
+    
+    label>a {
+        color: #ffffff;
+    }
+    
+    
+    #contenido{
+        padding: 20px
+        
+       
+    }
+    
+    #contenido {
+        width: 90%;
+        padding: 20px;
+        margin: 2px 0 2px 3%;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-style: outset;
+        box-shadow: 5px 5px 50px 5px rgb(44, 44, 44);
+    }
+    
+    /* ---- comienza el carrito */
+    
+    .carro {
         display: flex;
-        justify-content: start;
-        background-color: #12c72a88;
-        width: 450px;
-        height: 500px;
-        margin-left:   20px;
-        border-radius: 15px;
-        padding-left: 0px;
-        padding-top: 20px;
-        margin-right: 10px;
-        margin-top:  10px;  
+    }
+    
+    .carro > div{
+        margin: 2px;
+    }
+    
+    .table{
+        width: 10%;
+    }
+    
+    .precio{
+        width: 10%;
+    }
+    
+    #producto{
+        display: flex;
+    }
+    
+    #producto img {
+        width: 10px;
+        margin-right: 4px;
+    }
+    
+    h2{
+        font-size: x-large;
+    }
+    
+    p{
+        color: red;
+    }
+    
+    
+    #cantidad div{
+        margin-top: 2px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .selector{
+        display: flex;
+    }
+    
+    .selector input{
+        width: 5%;
+    }
+    
+    .selector button{
+        width: 5%;
+        margin: 1px;
+        border: none;
+    }
+    input{
+        width: 5%;
+    }
+    
+    #valor{
+        margin-top: 2px;
+        color: black;
+    }
+    
+    
+    /* Creacion de la seccion total */
+    
+    .monto{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    h3{
+        font-size: 3px;
+    }
+    #total{
+        color: black;
+        font-size: 15px;
+    }
+    
+    
+    .comprar{
+        margin: 4px;
+    }
+    
+    .comprar button{
+        width: 10%;
+        height: 5px;
     }
 }
