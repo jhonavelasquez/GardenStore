@@ -48,7 +48,13 @@
             <li><a href="carro.html"><img src="iconos/shopping_cart_24px2.png" alt="" width="35px">Carrito</a></li>
         </ul>
     </div>
-        <div class="contenido">
+        <form class="form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+            <button type="submit" id="submit">Registrarse</button>
+        </form>
+        <!-- <div class="contenido">
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="{% static 'core/js/validacionRegistro.js' %}"></script>
             <form action="" method="post">
@@ -92,7 +98,7 @@
                         style="font-size: 18px;   width: 100px;">Registrar</button>
                 </div>
             </form>
-        </div>
+        </div> -->
     </div>
 </body>
 

@@ -29,14 +29,17 @@
                 <div class="btn-group">
                     <button id="iniciarsesion" type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img src="{% static 'core/img/user_24px.png' %}" alt="" width="28px">
-                        Iniciar Sesión
+                        Mi sesión
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Iniciar Sesión</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Cerrar Sesión</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'registro' %}">Registrar</a></button>
                         </li>
                         <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
+                        </li>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
+                        </li>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
                         </li>
                     </ul>
                 </div>
@@ -56,8 +59,12 @@
                     <br>
                     <p class="card-text">$ {{i.precio}}</p>
                     <p>Stock: {{i.stock}}</p>
+                    {% if i.stock <= 0 %}
+                    <p>Producto no disponible!</p>
+                    {% else %}
                     <br>
-                    <a href="#" class="btn btn-primary">AÑADIR AL CARRO</a>
+                    <a href="{% url 'Add' i.codigo %}" class="btn btn-primary">AÑADIR AL CARRO</a>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

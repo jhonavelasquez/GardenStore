@@ -3,21 +3,15 @@ from django.contrib.auth.views import LoginView
 from .views import *
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('home', home, name='home'),
     path('homeAdmin', homeAdmin, name='homeAdmin'),
     path('crudProducto', crudProducto, name="crudProducto"),
     path('crudDescuento', crudDescuento, name="crudDescuento"),
-    path('login', LoginView.as_view(template_name="core/login.html"), name="login"),
-    path('loginAdmin', LoginView.as_view(template_name="core/login.html"), name="loginAdmin"),
+    path('', LoginView.as_view(template_name="core/login.html"), name="login"),
     path('registro', registro, name="registro"),
     path('historial', historial, name='historial'),
     path('suscripcion', suscripcion, name='suscripcion'),
     path('carro', carro, name='carro'),
-    path('carrito', carrito, name='carrito'),
-    path('agregarproducto/<user_id>/<prod_id>', agregarProducto, name='add'),   
-    path('comprar/<p_total>/<id_carrito>', comprar, name='comprar'),
-    path('multicompra/<prod_id>/<user_id>', multiCompra, name="multicompra"),
-    
 
     #funciones del crud
     path('registrarProducto/', registrarProducto),
@@ -29,5 +23,11 @@ urlpatterns = [
     path('actualizarDescuento/<id>', actualizarDescuento),
     path('eliminarDescuento/<id>', eliminarDescuento),
     path('editarDescuento/', editarDescuento),
-]
 
+    #funciones del carrito
+    path('agregar/<int:producto_id>', agregar_producto, name="Add"),
+    path('eliminar/<int:producto_id>', eliminar_producto, name="Del"),
+    path('restar/<int:producto_id>', restar_producto, name="Sub"),
+    path('limpiar/', limpiar_producto, name="cls"),
+    path('comprar/', comprar, name="comprar"),
+]
