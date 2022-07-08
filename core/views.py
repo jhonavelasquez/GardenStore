@@ -1,14 +1,21 @@
+
 from datetime import datetime
+from xmlrpc.client import DateTime
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
-from core.context_processor import total_carrito
+from .forms import UserRegisterForm
 from .models import *
+from core.models import Producto
 from .Carrito import *
+from django.contrib.auth.models import User
+
 
 
 def home(request):
     contexto = {'producto': Producto.objects.all()}
+    # user = User.objects.all(id= request.session.keys())
+    # if user.is_staff == 1:
+    #     return render(request, 'core/indexADMIN.html', contexto)
     return render(request, 'core/index.html', contexto)
 
 def homeAdmin(request):
@@ -25,7 +32,8 @@ def crudDescuento(request):
     return render(request, 'core/crud_descuentos.html', contexto)
 
 def historial(request):
-    return render(request, 'core/historial.html')
+    contexto = {'historial': Historial.objects.all()}
+    return render(request, 'core/historial.html', contexto)
 
 def suscripcion(request):
     return render(request, 'core/suscripcion.html')
@@ -101,14 +109,14 @@ def eliminarDescuento(request, id):
 
 def registro(request):
 	if request.method == 'POST':
-		form = UserCreationForm(request.POST)
+		form = UserRegisterForm(request.POST)
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data['username']
 			messages.success(request, f'Usuario {username} creado')
 			return redirect('/')
 	else:
-		form = UserCreationForm()
+		form = UserRegisterForm()
 
 	context = { 'form' : form }
 	return render(request, 'core/registro.html', context)
@@ -162,9 +170,14 @@ def limpiar_producto(request):
     carrito.limpiar()
     return redirect("carro")
 
-def comprar(request):
+def comprar(request, precio):
+    codigo = 0
+    codigo = precio *99/234
+    newHistorial = Historial.objects.create( codigo =codigo  , precio = precio ,fecha = datetime.now() )
     for key, value in request.session["carrito"].items():
         carrito = Carrito(request)
         carrito.limpiar()
 
     return redirect('carro')
+
+ 

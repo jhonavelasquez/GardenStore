@@ -127,10 +127,10 @@
                         <td colspan="2">$ {{total_carrito}}</td>
                     </div>
                 </div>
-                <div class="comprar">
-                    <label for="delibery">Impuestos incluidos. ¡Solo por hoy envío gratis!</label>
-                    <a href="{% url 'comprar' %}" class="btn btn-danger">Comprar</a>
-                </div>
+                    <div class="comprar">
+                        <label for="delibery">Impuestos incluidos. ¡Solo por hoy envío gratis!</label>
+                        <a href="comprar/{{total_carrito}}" class="btn btn-danger">Comprar</a>
+                    </div>
             </div>
         </div>
     </div>

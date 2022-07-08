@@ -107,7 +107,7 @@ label>a {
     
 }
 .table caption-top{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 #pagar{
     display: flex;

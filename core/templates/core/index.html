@@ -37,10 +37,14 @@
                         </li>
                         <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
-                        </li>
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
-                        </li>
+                        {% if user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
+                            </li>
+                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
+                            </li>
+                            {% endif %}
+                        {% endif %}
                     </ul>
                 </div>
             </li>

@@ -29,5 +29,5 @@ urlpatterns = [
     path('eliminar/<int:producto_id>', eliminar_producto, name="Del"),
     path('restar/<int:producto_id>', restar_producto, name="Sub"),
     path('limpiar/', limpiar_producto, name="cls"),
-    path('comprar/', comprar, name="comprar"),
+    path('comprar/<int:precio>', comprar, name="comprar"),
 ]

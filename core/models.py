@@ -24,8 +24,6 @@ class Descuento(models.Model):
     porcentaje = models.IntegerField(max_length=3)
 
 class Historial(models.Model):
-    codigo = models.IntegerField(primary_key=True, max_length=5)
-    nombre = models.CharField(max_length=40)
+    codigo = models.AutoField(primary_key=True)
     precio = models.IntegerField(max_length=20)
-    fecha = models.DateField(max_length=20)
-    imagen = models.CharField(max_length=400, default= "imagen" )
+    fecha = models.DateField(null=False)
