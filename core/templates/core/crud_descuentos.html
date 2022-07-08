@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="contenedor">
+    <div class="contenido">
         <div class="header">
             <img src="https://images.vexels.com/media/users/3/235104/isolated/preview/c82b0d602a94a42de2cc0fb924ecc989-flor-cortada-de-girasol.png"
                 alt="" width="80">
@@ -76,8 +76,8 @@
                         <td>{{ i.nombre }}</td>
                         <td>{{ i.porcentaje }}%</td>
                         <td>
-                            <a href="actualizarDescuento/{{ i.id }}"><button type="submit" class="btn btn-secondary" id="btnActualizar">Actualizar</button></a>
-                            <a href="eliminarDescuento/{{ i.id }}"><button type="submit" class="btn btn-secondary" id="btnEliminar">Eliminar</button></a>
+                            <a href="actualizarDescuento/{{ i.id_descuento }}"><button type="submit" class="btn btn-secondary" id="btnActualizar">Actualizar</button></a>
+                            <a href="eliminarDescuento/{{ i.id_descuento }}"><button type="submit" class="btn btn-secondary" id="btnEliminar">Eliminar</button></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -89,13 +89,15 @@
                 {% csrf_token %}
                 <h1 style="font-size: 35px;"> •Agregar descuento</h1>
                 <label for="id">Id: </label>
-                <input type="text" name="id" id="id" class="form-control">
+                <input type="number" name="id" id="id" class="form-control">
                 <label for="nombre">Nombre del descuento: </label>
                 <input type="text" name="nombre" id="nombre" class="form-control">
                 <h2 id="mensaje1"></h2>
                 <label for="porcentaje">Porcentaje de descuento (%): </label>
                 <input type="number" name="porcentaje" id="porcentaje" class="form-control" max="100">
                 <h2 id="mensaje2"></h2>
+                <label for="producto">Producto: </label>
+                <input type="number" name="producto" id="producto" class="form-control">
                 <div class="botones">
                     <button type="submit" id="agregar" class="btn btn-primary"> Agregar</button>
                     <button type="reset" id="limpiar" class="btn btn-primary"

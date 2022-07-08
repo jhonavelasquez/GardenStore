@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
-
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
-    background-image: url(images/fondo.png);
+
+body{
+    background-image: url(https://vietnam.travel/sites/default/files/styles/top_banner/public/2018-10/Banner%20mekong%20guide-7.JPG?itok=EL46q763);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -14,22 +14,6 @@ body {
     background-position: center center;
 }
 
-.error{
-    border: 2px red solid !important;
-    background-color: #ff7474 !important;
-}
-.ok{
-    border: 2px green solid !important;
-    background-color: #74ffb5 !important;
-}
-
-
-
-.contenido {
-    padding: 40px 150px 40px 150px;
-    display: flex;
-    flex-direction: row;
-}
 
 .header img,
 .header h1 {
@@ -41,6 +25,13 @@ body {
 .header h1 {
     font-size: 30px;
     padding-top: 35px;
+}
+
+h1 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
 }
 
 .menu {
@@ -56,14 +47,8 @@ body {
     padding: 20px;
     display: block;
     font-family: 'Secular One', sans-serif;
-    
 }
-.menu li a  img{
-   
-    padding: 0px 10px 5px 0px;
-    
-    
-}
+
 .menu li a:hover {
     opacity: 0.7;
 }
@@ -75,6 +60,23 @@ body {
 .menu li {
     display: inline-block;
     padding-right: 30px;
+}
+.menu li button>a {
+    color: black;
+}
+.menu li a div {
+    float: left;
+}
+.menu li a  img{
+    padding: 0px 10px 5px 0px;
+    
+    
+}
+
+.contenido {
+    padding: 40px 150px 40px 150px;
+    display: flex;
+    flex-direction: row;
 }
 
 form {
@@ -181,6 +183,15 @@ p {
     padding-right: 500px;
 }
 
+
+.error{
+    border: 2px red solid !important;
+    background-color: #ff7474 !important;
+}
+.ok{
+    border: 2px green solid !important;
+    background-color: #74ffb5 !important;
+}
 
 
 

@@ -56,21 +56,27 @@
     <div class="productos">
         <div id="productos">
             {% for i in producto %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{i.imagen}}" class="card-img-top" alt="..." width="200" height="200">
-                <div class="card-body">
-                    <h5 class="card-title">{{i.nombre}}</h5>
-                    <br>
-                    <p class="card-text">$ {{i.precio}}</p>
-                    <p>Stock: {{i.stock}}</p>
-                    {% if i.stock <= 0 %}
-                    <p>Producto no disponible!</p>
-                    {% else %}
-                    <br>
-                    <a href="{% url 'Add' i.codigo %}" class="btn btn-primary">AÑADIR AL CARRO</a>
-                    {% endif %}
+            
+                <div class="card" style="width: 18rem;">
+                    <img src="{{i.imagen}}" class="card-img-top" alt="..." width="200" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.nombre}}</h5>
+                        <br>
+                        {% if i.estado_promocion == False %}
+                        <p class="card-text">$ {{i.precio}} </p>
+                        {% else %}
+                        <del>${{i.precio_antiguo}}</del> 
+                        <p class="card-text">$ {{i.precio}} </p>
+                        {% endif %}
+                        <p>Stock: {{i.stock}}</p>
+                        {% if i.stock <= 0 %}
+                        <p>Producto no disponible!</p>
+                        {% else %}
+                        <br>
+                        <a href="{% url 'Add' i.codigo %}" class="btn btn-primary">AÑADIR AL CARRO</a>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>

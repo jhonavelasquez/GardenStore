@@ -61,12 +61,12 @@
       {% csrf_token %}
         <h1 style="font-size: 35px;"> •Agregar descuento</h1>
         <label for="id">Id: </label>
-        <input type="text" name="id" id="id" class="form-control">
+        <input type="text" name="id" id="id" class="form-control" value="{{descuento.id}}" readonly required>
         <label for="nombre">Nombre del descuento: </label>
-        <input type="text" name="nombre" id="nombre" class="form-control">
+        <input type="text" name="nombre" id="nombre" class="form-control" value="{{descuento.nombre}}">
         <h2 id="mensaje1"></h2>
         <label for="porcentaje">Porcentaje de descuento (%): </label>
-        <input type="number" name="porcentaje" id="porcentaje" class="form-control" max="100">
+        <input type="number" name="porcentaje" id="porcentaje" class="form-control" max="100" value="{{descuento.porcentaje}}">
       <br>
     <button type="submit" class="btn btn-primary" id="btnActualizar" >Actualizar</button>
     <button type="submit" class="btn btn-primary" id="btnLimpiar">Limpiar</button>

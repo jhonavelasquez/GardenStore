@@ -18,9 +18,6 @@ def home(request):
     #     return render(request, 'core/indexADMIN.html', contexto)
     return render(request, 'core/index.html', contexto)
 
-def homeAdmin(request):
-    contexto = {'producto': Producto.objects.all()}
-    return render(request, 'core/indexADMIN.html', contexto)
 
 def crudProducto(request):
     contexto = {'producto': Producto.objects.all()}
@@ -47,10 +44,11 @@ def registrarProducto(request):
     precio=request.POST['precio']
     stock=request.POST['stock']
     imagen=request.POST['imagen']
+    
+    producto = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, stock=stock, imagen=imagen)
+    producto.save() 
 
-        
-    productos = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, stock=stock, imagen=imagen)
-    return redirect('homeAdmin')
+    return redirect('crudProducto')
 
 def actualizarProducto(request, codigo):
     productos = Producto.objects.get(codigo=codigo)
@@ -62,50 +60,59 @@ def editarProducto(request):
     precio=request.POST['precio']
     stock=request.POST['stock']
     imagen=request.POST['imagen']
+    descuento=request.POST['descuento']
     
     productos = Producto.objects.get(codigo=codigo)
     productos.nombre = nombre
     productos.precio = precio
     productos.stock = stock
     productos.imagen = imagen
+    productos.descuento = descuento
     productos.save()
     
-    return redirect('/')
+    return redirect('crudProducto')
        
 
 def eliminarProducto(request, codigo):
     productos = Producto.objects.get(codigo=codigo)
     productos.delete()
-    return redirect('homeAdmin')
+    return redirect('crudProducto')
 
 def registrarDescuento(request):
-    id=request.POST['id']
+    id_descuento=request.POST['id']
     nombre=request.POST['nombre']
     porcentaje=request.POST['porcentaje']
+    codigo=request.POST['producto']
 
-    descuento = Descuento.objects.create(id=id, nombre=nombre, porcentaje=porcentaje)
-    return redirect('homeAdmin')
+    descuento = Descuento.objects.create(id_descuento=id_descuento, nombre=nombre, porcentaje=porcentaje, codigo= codigo)
 
-def actualizarDescuento(request, id):
-    descuento = Descuento.objects.get(id=id)
+    producto = Producto.objects.get(codigo= codigo)
+    producto.estado_promocion = True
+    producto.precio_antiguo = producto.precio
+    producto.precio = (producto.precio * (int(request.POST['porcentaje']))/100)
+    producto.save()
+    return redirect('crudDescuento')
+
+def actualizarDescuento(request, id_descuento):
+    descuento = Descuento.objects.get(id_descuento=id_descuento)
     return render(request, 'core/actualizar_descuento.html', {'descuento':descuento})
 
 def editarDescuento(request):
-    id=request.POST['id']
+    id_descuento=request.POST['id_descuento']
     nombre=request.POST['nombre']
     porcentaje=request.POST['porcentaje']
     
-    descuento = Descuento.objects.get(id=id)
+    descuento = Descuento.objects.get(id_descuento=id_descuento)
     descuento.nombre = nombre
     descuento.porcentaje = porcentaje
     descuento.save()
     
-    return redirect('homeAdmin')
+    return redirect('crudDescuento')
 
-def eliminarDescuento(request, id):
-    descuento = Descuento.objects.get(id=id)
+def eliminarDescuento(request, id_descuento):
+    descuento = Descuento.objects.get(id_descuento=id_descuento)
     descuento.delete()
-    return redirect('homeAdmin')
+    return redirect('crudDescuento')
 
 def registro(request):
 	if request.method == 'POST':
@@ -179,5 +186,3 @@ def comprar(request, precio):
         carrito.limpiar()
 
     return redirect('carro')
-
- 

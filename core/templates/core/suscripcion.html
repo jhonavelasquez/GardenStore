@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    
+
     <div class="contenedor">
         <div class="header">
             <img src="https://images.vexels.com/media/users/3/235104/isolated/preview/c82b0d602a94a42de2cc0fb924ecc989-flor-cortada-de-girasol.png"
@@ -25,46 +25,53 @@
         </div>
         <ul class="menu">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html" style="color: #12c72a;"><img src="iconos/home_page_24px.png" alt="">Inicio</a> 
-                
+                <a class="nav-link" href="{% url 'home' %}" style="color: #12c72a;"><img
+                        src="{% static 'core/img/home_page_24px.png' %}" alt="">Inicio</a>
+
             </li>
-            <li><a href="historial.html"> <img src="iconos/time_machine_24px.png" alt="">Tus compras</a></li>
+            <li><a href="{% url 'historial' %}"> <img src="{% static 'core/img/time_machine_24px.png' %}" alt="">Tus
+                    compras</a></li>
             <li>
                 <div class="btn-group">
                     <button id="iniciarsesion" type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img src="iconos/user_24px.png" alt="" width="28px">
-                        Iniciar Sesión
+                        aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img
+                            src="{% static 'core/img/user_24px.png' %}" alt="" width="28px">
+                        Mi sesión
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Cerrar Sesión</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Cerrar
+                                    Sesión</a></button>
                         </li>
-                        </li>
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
-                        </li>
-                        {% if user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
-                            </li>
-                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
-                            </li>
-                            {% endif %}
-                        {% endif %}
-                    </ul>
-                </div>
             </li>
-            <li><a href="carro.html"><img src="iconos/shopping_cart_24px2.png" alt="" width="35px">Carrito</a></li>
+            <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
+            </li>
+            {% if user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
+            </li>
+            <li><button class="dropdown-item" type="button"><a
+                        href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
+            </li>
+            {% endif %}
+            {% endif %}
         </ul>
+    </div>
+    </li>
+    <li><a href="{% url 'carro' %}"><img src="{% static 'core/img/shopping_cart_24px2.png' %}" alt=""
+                width="35px">Carrito</a></li>
+    </ul>
     </div>
     <div class="contenido">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{% static 'core/js/valSuscripcion.js' %}"></script>
-        <form action="#" class="credit-card-div">
+        <form action="suscripcion/" method="post" class="credit-card-div">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row ">
                         <div class="col-md-12">
                             <label for="Numtarjeta"></label>
-                            <input type="number" class="form-control" id="Numtarjeta" name="Numtarjeta" placeholder="Numero de Tarjeta"  required/>
+                            <input type="number" class="form-control" id="Numtarjeta" name="Numtarjeta"
+                                placeholder="Numero de Tarjeta" required />
                             <h4 id="mensaje"></h4>
                         </div>
                     </div>
@@ -74,25 +81,26 @@
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <label for="MM"></label>
-                            <input type="number" class="form-control" id="MM" name="MM" placeholder="MM"  required/>
+                            <input type="number" class="form-control" id="MM" name="MM" placeholder="MM" required />
                             <h4 id="mensaje1"></h4>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <label for="YY"></label>
-                            <input type="number" class="form-control" id="YY" name="YY" placeholder="YY" required/>
+                            <input type="number" class="form-control" id="YY" name="YY" placeholder="YY" required />
                             <h4 id="mensaje2"></h4>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <label for="CCV"></label>
-                            <input type="number3" class="form-control" id="CCV" name="CCV" placeholder="CCV" required/>
+                            <input type="number3" class="form-control" id="CCV" name="CCV" placeholder="CCV" required />
                             <h4 id="mensaje3"></h4>
                         </div>
-                        
+
                     </div>
                     <div class="row ">
                         <div class="col-md-12 pad-adjust">
                             <label for="Nombre"></label>
-                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre"  required/>
+                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre"
+                                required />
                             <h4 id="mensaje4"></h4>
                         </div>
                     </div>
@@ -112,9 +120,9 @@
                     </div>
                     <div class="row" id="botones">
                         <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                            <input type="submit" class="btn btn-danger" value="CANCELAR" />
+                            <input type="reset" class="btn btn-danger" value="CANCELAR" />
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust"> 
+                        <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
                             <input type="submit" class="btn btn-warning btn-block" id="pagar" value="PAGAR" />
                         </div>
                     </div>
@@ -133,7 +141,7 @@
                     repellendus dignissimos, quisquam assumenda expedita eos repudiandae nam perferendis velit repellat!
                 </p>
             </div>
-            
+
         </form>
         <div class="info">
             <div> <img src="{% static 'core/img/fundacion.png' %}" alt="Imagen Fundacion"></div>

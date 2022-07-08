@@ -4,13 +4,12 @@ from .views import *
 
 urlpatterns = [
     path('home', home, name='home'),
-    path('homeAdmin', homeAdmin, name='homeAdmin'),
     path('crudProducto', crudProducto, name="crudProducto"),
     path('crudDescuento', crudDescuento, name="crudDescuento"),
     path('', LoginView.as_view(template_name="core/login.html"), name="login"),
     path('registro', registro, name="registro"),
     path('historial', historial, name='historial'),
-    path('suscripcion', suscripcion, name='suscripcion'),
+    path('suscripcion/', suscripcion, name='suscripcion'),
     path('carro', carro, name='carro'),
 
     #funciones del crud
@@ -20,8 +19,8 @@ urlpatterns = [
     path('editarProducto/', editarProducto),
 
     path('registrarDescuento/', registrarDescuento),
-    path('actualizarDescuento/<id>', actualizarDescuento),
-    path('eliminarDescuento/<id>', eliminarDescuento),
+    path('actualizarDescuento/<id_descuento>', actualizarDescuento),
+    path('eliminarDescuento/<id_descuento>', eliminarDescuento),
     path('editarDescuento/', editarDescuento),
 
     #funciones del carrito
