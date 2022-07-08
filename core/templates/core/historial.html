@@ -39,15 +39,19 @@
                         Iniciar Sesión
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Iniciar
-                                    Sesión</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Cerrar Sesión</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a
-                                    href="{% url 'registro' %}">Registrar</a></button>
                         </li>
-                        <li><button class="dropdown-item" type="button"><a
-                                    href="{% url 'suscripcion' %}">Suscripción</a></button>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
                         </li>
+                        {% if user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
+                            </li>
+                            <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
+                            </li>
+                            {% endif %}
+                        {% endif %}
                     </ul>
                 </div>
             </li>

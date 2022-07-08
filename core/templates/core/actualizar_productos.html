@@ -18,35 +18,44 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
-  <div class="contenido">
+  <div class="contenedor">
     <div class="header">
-      <div class="header" id="logo">
-        <img
-          src="https://images.vexels.com/media/users/3/235104/isolated/preview/c82b0d602a94a42de2cc0fb924ecc989-flor-cortada-de-girasol.png"
-          alt="" width="80">
-        <h5> <a href="" style="text-decoration: none; color: #12c72a;">GARDEN STORE</a></h5>
-      </div>
-      <ul class="menu">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html" style="color: #12c72a;"><img src="iconos/home_page_24px.png"
-              alt="">Inicio</a>
-
-        </li>
-        <div class="btn-group">
-          <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-            style="color: #12c72a; font-family: 'Secular One', sans-serif;">
-            CRUD
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><button class="dropdown-item" type="button"><a href="crud_productos.html">Productos</a></button></li>
-            <li><button class="dropdown-item" type="button"><a
-                  href="crud_descuentos.html">Descuentos/Promociones</a></button></li>
-          </ul>
-        </div>
-        </li>
-      </ul>
+        <img src="https://images.vexels.com/media/users/3/235104/isolated/preview/c82b0d602a94a42de2cc0fb924ecc989-flor-cortada-de-girasol.png"
+            alt="" width="80">
+        <h1> <a href="" style="text-decoration: none; color: #12c72a;">GARDEN STORE</a></h1>
     </div>
-  </div>
+    <ul class="menu">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}" style="color: #12c72a;"><img src="{% static 'core/img/home_page_24px.png' %}" alt="">Inicio</a> 
+            
+        </li>
+        <li><a href="{% url 'historial' %}"> <img src="{% static 'core/img/time_machine_24px.png' %}" alt="">Tus compras</a></li>
+        <li>
+            <div class="btn-group">
+                <button id="iniciarsesion" type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="color: #12c72a; font-family: 'Secular One', sans-serif;"> <img src="{% static 'core/img/user_24px.png' %}" alt="" width="28px">
+                    Mi sesión
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button"><a href="{% url 'login' %}">Cerrar Sesión</a></button>
+                    </li>
+                    </li>
+                    <li><button class="dropdown-item" type="button"><a href="{% url 'suscripcion' %}">Suscripción</a></button>
+                    </li>
+                    {% if user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudProducto' %}">Productos</a></button>
+                        </li>
+                        <li><button class="dropdown-item" type="button"><a href="{% url 'crudDescuento' %}">Descuentos/Promociones</a></button>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+        </li>
+        <li><a href="{% url 'carro' %}"><img src="{% static 'core/img/shopping_cart_24px2.png' %}" alt="" width="35px">Carrito</a></li>
+    </ul>
+</div>
 
     
     <form id="formProductos" action="/editarProducto/"  method="POST">
