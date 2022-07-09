@@ -60,14 +60,12 @@ def editarProducto(request):
     precio=request.POST['precio']
     stock=request.POST['stock']
     imagen=request.POST['imagen']
-    descuento=request.POST['descuento']
     
     productos = Producto.objects.get(codigo=codigo)
     productos.nombre = nombre
     productos.precio = precio
     productos.stock = stock
     productos.imagen = imagen
-    productos.descuento = descuento
     productos.save()
     
     return redirect('crudProducto')
@@ -89,7 +87,7 @@ def registrarDescuento(request):
     producto = Producto.objects.get(codigo= codigo)
     producto.estado_promocion = True
     producto.precio_antiguo = producto.precio
-    producto.precio = (producto.precio * (int(request.POST['porcentaje']))/100)
+    producto.precio = producto.precio_antiguo - (producto.precio * (int(request.POST['porcentaje']))/100)
     producto.save()
     return redirect('crudDescuento')
 
